@@ -40,6 +40,18 @@ interupt:
 	andi et, et, 0x0FF
 	mov r2, et
 
+	movui et, 0x1B
+	stwio et, 0(r10)
+
+	movui et, 0x5b
+	stwio et, 0(r10)
+
+	movui et, 0x32
+	stwio et, 0(r10)
+
+	movui et, 0x4B
+	stwio et, 0(r10)
+
 interupt_return:
 	addi ea, ea, -4
 	eret
