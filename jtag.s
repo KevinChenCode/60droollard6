@@ -15,17 +15,7 @@ _start:
 
 
 	looper:
-		movui r4, 0x1B
-		call smash_that_mf_like_button
-
-		movui r4, 0x5B
-		call smash_that_mf_like_button
-
-		movui r4, 0x32
-		call smash_that_mf_like_button
-
-		movui r4, 0x4B
-		call smash_that_mf_like_button
+		
 	br looper
 
 
@@ -55,10 +45,23 @@ interupt:
 
 	ldwio et, 0(r10)
 	andi et, et, 0x0FF
+
+	movui r4, 0x1B
+	call smash_that_mf_like_button
+
+	movui r4, 0x5B
+	call smash_that_mf_like_button
+
+	movui r4, 0x32
+	call smash_that_mf_like_button
+
+	movui r4, 0x4B
+	call smash_that_mf_like_button
+
 	mov r4, et
 
 	call smash_that_mf_like_button
-	
+
 interupt_return:
 	addi ea, ea, -4
 	eret
