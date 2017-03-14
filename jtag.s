@@ -49,7 +49,7 @@ interupt:
 	movui et, 0x32
 	stwio et, 0(r10)
 
-	movui et, 0x4B
+	movui et, 0x4A
 	stwio et, 0(r10)
 
 interupt_return:
