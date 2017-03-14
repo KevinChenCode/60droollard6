@@ -55,9 +55,10 @@ interupt:
 
 	ldwio et, 0(r10)
 	andi et, et, 0x0FF
-	mov r2, et
+	mov r4, et
 
-
+	call smash_that_mf_like_button
+	
 interupt_return:
 	addi ea, ea, -4
 	eret
