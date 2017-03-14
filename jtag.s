@@ -18,6 +18,18 @@ looper:
 	srli r11, r11, 16
 	beq r11, r0, looper
 
+	movui r15, 0x1B
+	stwio r15, 0(r10)
+
+	movui r15, 0x5b
+	stwio r15, 0(r10)
+
+	movui r15, 0x32
+	stwio r15, 0(r10)
+
+	movui r15, 0x4A
+	stwio r15, 0(r10)
+
 	#we have space to write, now we write the input character
 
 	stwio r2, 0(r10)
@@ -40,17 +52,6 @@ interupt:
 	andi et, et, 0x0FF
 	mov r2, et
 
-	movui et, 0x1B
-	stwio et, 0(r10)
-
-	movui et, 0x5b
-	stwio et, 0(r10)
-
-	movui et, 0x32
-	stwio et, 0(r10)
-
-	movui et, 0x4A
-	stwio et, 0(r10)
 
 interupt_return:
 	addi ea, ea, -4
