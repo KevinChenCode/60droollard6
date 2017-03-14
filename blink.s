@@ -1,11 +1,13 @@
 .equ leds, 	0xFF200000
 .equ timer, 0xFF202000
-.equ period, 50000000
+.equ period, 500000
 
 .global _start
 
 _start:
 	movia r6, timer
+
+	stwio r0, 0(r6)
 
 	movia r5, %lo(period)
 	stwio r5, 8(r6) 
