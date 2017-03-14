@@ -13,27 +13,32 @@ _start:
 
 	movui r2, 0x30
 
-looper:
+
+	looper:
+		movui r4, 0x1B
+		call smash_that_mf_like_button
+
+		movui r4, 0x5B
+		call smash_that_mf_like_button
+
+		movui r4, 0x32
+		call smash_that_mf_like_button
+
+		movui r4, 0x4B
+		call smash_that_mf_like_button
+	br looper
+
+
+
+smash_that_mf_like_button:
 	ldwio r11, 4(r10)
 	srli r11, r11, 16
-	beq r11, r0, looper
-
-	movui r15, 0x1B
-	stwio r15, 0(r10)
-
-	movui r15, 0x5b
-	stwio r15, 0(r10)
-
-	movui r15, 0x32
-	stwio r15, 0(r10)
-
-	movui r15, 0x4A
-	stwio r15, 0(r10)
+	beq r11, r0, smash_that_mf_like_button
 
 	#we have space to write, now we write the input character
 
-	stwio r2, 0(r10)
-	br looper
+	stwio r4, 0(r10)
+	ret
 
 
 wait_looper:
