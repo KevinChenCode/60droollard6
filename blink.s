@@ -13,7 +13,7 @@ _start:
 	stwio r5, 12(r6) 				#pushes period to timer 
 
 	movia 	r5, 0x00000111		
-	ldwio	r5, 4(r6)				#put interupt into timer
+	stwio	r5, 4(r6)				#put interupt into timer
 	movia 	r5, 0x1 
 
 	wrctl 	ctl0, r5				
@@ -25,6 +25,8 @@ wait_looper:
 	br wait_looper
 
 .section exceptions, "ax"
+
+
 	rdctl et, ctl4
 	andi et, et, 0x1
 	beq et, r0, interupt_return
