@@ -12,9 +12,10 @@ _start:
 	movia r5, %hi(period)
 	stwio r5, 12(r6) 				#pushes period to timer 
 
-	movia 	r5, 0x00000011		
+	movia 	r5, 0x00000111		
 	ldwio	r5, 4(r6)				#put interupt into timer
 	movia 	r5, 0x1 
+
 	wrctl 	ctl0, r5				
 	wrctl 	ctl3, r5 				#enable interupt on device
 
