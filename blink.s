@@ -2,9 +2,9 @@
 .equ timer, 0xFF202000
 .equ period, 50000000
 
-.global start
+.global _start
 
-start:
+_start:
 	movia r6, timer
 
 	movia r5, %lo(period)
