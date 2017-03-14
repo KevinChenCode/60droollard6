@@ -30,8 +30,9 @@ wait_looper:
 	br wait_looper
 
 .section exceptions, "ax"
+.align 2
 
-
+interupt:
 	rdctl et, ctl4
 	andi et, et, 0b1
 	beq et, r0, interupt_return
