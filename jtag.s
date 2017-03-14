@@ -11,6 +11,8 @@ _start:
 	movui r11, 0x100
 	wrctl ctl3, r11
 
+	movui r2, 0x30
+
 looper:
 	ldwio r11, 4(r10)
 	srli r11, r11, 16
@@ -36,7 +38,7 @@ interupt:
 
 	ldwio et, 0(r10)
 	andi et, et, 0x0FF
-	mov r4, et
+	mov r2, et
 
 interupt_return:
 	addi ea, ea, -4
