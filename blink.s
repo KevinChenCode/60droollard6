@@ -29,7 +29,7 @@ _start:
 wait_looper:
 	br wait_looper
 
-.section exceptions, "ax"
+.section .exceptions, "ax"
 .align 2
 
 interupt:
